@@ -49,7 +49,10 @@ automaBtn.addEventListener('click', function(){
                 newrow.insertCell(2);
                 
                 //dados a serem inseridos em cada célula
-                newrow.cells[0].appendChild(document.createTextNode(materia.nome));
+                var nomeMateria = document.createElement('h3');
+                nomeMateria.style.color = '#004ba0';
+                nomeMateria.innerHTML = materia.nome;
+                newrow.cells[0].appendChild(nomeMateria);
 
                 var tituloMedia = document.createElement('span');
                 tituloMedia.innerHTML = 'Para média ';

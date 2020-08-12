@@ -21,6 +21,7 @@ h1{
     font: 2em Helvetica, Arial, sans-serif;
     font-weight: bold;    
 }
+
 h2{
     font: 1.5em Helvetica, Arial, sans-serif;
     font-weight: bold;
@@ -32,6 +33,7 @@ h3{
     color: #004ba0;
     font-weight: bold;
 }
+
 p{
     font: 20px Helvetica, Arial, sans-serif;
     color: #004ba0;
@@ -39,20 +41,37 @@ p{
 
 }
 
+/*Número no canto superior esquerdo*/
+.numEtapa{
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid #004ba0;
+    color: #004ba0;
+    background-color: #e7a61a;
+    text-align: center;
+    font: 20px Helvetica, Arial, sans-serif;
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+}
 
 input{
     font: 20px Helvetica, Arial, sans-serif;
 
 }
+
 form{
     font: 20px Helvetica, Arial, sans-serif;
 
 }
+
 a{
     text-decoration: none;
     display: flex;
     align-self: center;
 }
+
 button{
     border: 1px solid #004ba0;
     border-radius: 20px;
@@ -66,12 +85,20 @@ button{
     box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
     background-color: #ecf0f1;
 }
+
 button:hover{
     transition: 0.3s;
     color: #ecf0f1;
     background-color: #63a4ff;
     cursor: pointer;
     box-shadow: 0px 3px none;
+}
+
+#mainbtns{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 /*!!EDITAR O CLIQUE DO BOTÃO*/
 label{
@@ -89,8 +116,9 @@ input{
     font-weight: bold;
     width: 40px;
     text-align: center;
-    
 }
+
+/*Início estilização tabela de resultados*/
 table{
     width: 100%;
     border-collapse: separate;
@@ -98,30 +126,29 @@ table{
     border-radius: 20px;
 }
 
-td,th{        
+table td,th{        
     padding: 0.5rem;
-    text-align: left;
-
-}
-table th{
     font: 20px Helvetica, Arial, sans-serif;
     color: #004ba0;
     font-weight: bold;
     text-align: center;
-
 }
-table td{
-    font: 20px Helvetica, Arial, sans-serif;
-    font-weight: bold;
-    text-align: center;
 
+table span{
+    left: -9999px;
+    position: absolute;
+    visibility: hidden;
 }
+
+/*Tabela responsiva:*/
 @media(max-width:500px){
+
     table thead{
         left: -9999px;
         position: absolute;
         visibility: hidden;
     }
+
     table tr{
         display: flex;
         flex-direction:column;
@@ -129,43 +156,22 @@ table td{
         align-items: stretch;
 
     }
+
     table td{
-        border: 1px solid black;
+        border-bottom: 2px solid black;
         padding-top: 35px;
         margin: 0 -1px -1px 0;
         position: relative;
         text-overflow: ellipsis;
     }
-    /*ver como funcionam pseudo elements
-    table input::before{
-        content: attr(data-title);
-        position: absolute;
-        top: 0px;
-        left: 0px;
-    }*/
 
-
-
+    table span{
+        left: +9999px;
+        position: static;
+        visibility: visible;
+    }
 }
-#mainbtns{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-}
-.numEtapa{
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    padding: 10px;
-    margin: 10px;
-    border: 2px solid #004ba0;
-    color: #004ba0;
-    background-color: #e7a61a;
-    text-align: center;
-    font: 20px Helvetica, Arial, sans-serif;
-    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
-}
+/*Fim estilização tabela de resultados*/
 
 #escolhaMetodo, #escolhaSemestre, #escolhaMaterias, #displayNotas, #fluxoManual, #displayNotasManual{
     flex-direction: column;
@@ -176,6 +182,7 @@ table td{
     padding: 10px;
     box-shadow: 0px 7px 15px 2px rgba(0,0,0,0.75);
 }
+
 #displayNotas{
     margin-bottom: 100px;
 }
@@ -190,11 +197,10 @@ table td{
 /*fixar o tamanho dos cards para telas menores do que 900px:*/
 @media only screen and (max-width:900px){
     #escolhaMetodo, #escolhaSemestre, #escolhaMaterias, #displayNotas, #fluxoManual, #displayNotasManual{
-        min-width: 80%;
-        max-width: 80%;
+        width: 80%;
     }
-    
 }
+
 /*Estilização do checkbox*/
 #materias2semestre{
     box-sizing: border-box;
@@ -234,9 +240,12 @@ table td{
 .materiaContainer input[type='checkbox']:hover + label::before {
      background-color: lightblue;
 }
+
 .materiaContainer input[type='checkbox']:focus + label::before {
     box-shadow: 0 0 5px black;
 }
+
  .materiaContainer input[type='checkbox']:checked +label::before{
      background-color: #004ba0;
 }
+/*Fim da estilização do checkbox*/
