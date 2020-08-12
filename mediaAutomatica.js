@@ -50,18 +50,26 @@ automaBtn.addEventListener('click', function(){
                 
                 //dados a serem inseridos em cada célula
                 newrow.cells[0].appendChild(document.createTextNode(materia.nome));
+
+                var tituloMedia = document.createElement('span');
+                tituloMedia.innerHTML = 'Para média ';
+                newrow.cells[1].appendChild(tituloMedia);
                 
                 var media = document.createElement('input');
                 media.value = data[materia.position]['media_pretendida'];
                 media.id = 'media'+ materia.nome;
                 newrow.cells[1].appendChild(media);
 
+                var tituloResultado = document.createElement('span');
+                tituloResultado.innerHTML = 'Nota P3:'
+                newrow.cells[2].appendChild(tituloResultado);
+
                 var resultado = document.createElement('p');
                 resultado.style.color = 'black';
                 resultado.innerHTML = notaP3.toFixed(1);
                 resultado.id = 'resultado'+ materia.nome;
                 newrow.cells[2].appendChild(resultado);
-
+                
                 rowcount++;
                 
                 //adicionando event listener para se a média for alterada
