@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calcule sua P3 | Calculadora de nota desejada</title>
+        <meta charset="utf-8"/>
+        <meta name="description" content="Uma calculadora de notas para a sua P3 de acordo com a média desejada" />
+        <meta name="author" content="Davi Giordano | PoliJunior"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="média, poli, escola, politécnica, nota, P3,"/>
+        <link rel="stylesheet" type="text/css" href="format.css">
+        <!--ENCONTRAR UM ÍCONE PARA O SITE!-->
+        <!--FAZER UM BOTÃO PARA EDITAR A MÉDIA DESEJADA-->
+    </head>
+    
+    <!--FAREI REFERÊNCIA ÀS MATÉRIAS PELO SEU CÓDIGO USP INDIVIDUAL, O QUE FACILITARIA UMA EXPANSÃO DO SISTEMA,
+    EM VEZ DE DAR NOMES ARBITRÁRIOS E DEOPIS TER QUE MUDAR
+        Quick ref:
+        MAT2454 Cálculo 2
+        MAT3458 Algebra Linear 2
+        PME2100 Mecânica A 
+        4302112 Física 2    ...descobri depois que nomes de id não podem começar com números. 
+                               Inicio o id com as três primeiras letras da matéria. Outra solução?
+        PMI3019 Poesia para engenheiros
+        
+    -->
+    <body onload="esconderEtapas()">
+        <p>testando uma mudança qualquer</p>
+        <header>
+            <h1>Calcule sua P3</h1>
+            <h2>Aqui você pode calcular a nota que precisa tirar na P3 para atingir uma média desejada</h2>
+            <button id="start-btn" onclick="mostrarEtapa(0)"  >Vamos lá</button>
+        </header>
+
+        <!--Escolher o método de fluxo-->
+        <div id="escolhaMetodo">
+            <p class="numEtapa">1</p>
+            
+            <h3>Como quer inserir as notas?</h3>
+            
+            <div id="mainbtns">
+                <a href="#escolhaMaterias">
+                    <button id="automatico-btn" onclick="mostrarEtapa(1)">Usar as notas do sistema</button>
+                </a>
+                <br>
+               <a href="#fluxoManual">
+                    <button id="manual-btn" onclick="startManual()">Inserir as notas manualmente</button>
+               </a>
+            </div>           
+        </div>
+        
+        <!--Início fluxo automático-->
+        
+            
+            
+
+                  
+
+             <!--Escolha das matérias para calcular-->
+            <div id="escolhaMaterias">
+                <p class="numEtapa">2</p>
+                <h3>Escolha as matérias:</h3>
+                
+                <div id="materias2sememestre"> 
+                    <div class="materiaContainer">
+                        <input type="checkbox" name="MAT2454" id="MAT2454" checked >
+                        <label for="MAT2454">Cálculo II</label>
+                    </div>
+
+                    <div class="materiaContainer">
+                        <input type="checkbox" name="FIS4302112" id="FIS4302112" checked>
+                        <label for="FIS4302112">Física II</label>
+                    </div>
+                    <div class="materiaContainer">
+                        <input type="checkbox" name="PME2100" id="PME2100" checked>
+                        <label  for="PME2100">Mecânica A</label>
+                    </div>
+
+                    <div class="materiaContainer">
+                        <input type="checkbox" name="MAT3458" id="MAT3458" checked>
+                        <label  for="MAT3458">Algelin II</label>
+                    </div>
+
+                    <div class="materiaContainer">
+                        <input type="checkbox" name="PMI3019" id="PMI3019" checked>
+                        <label for="PMI3019">Poesia para engenheiros</label>    
+                    </div>
+                </div>
+                
+                 <a href="#displayNotas">
+                    <button id="calcularAutomatico" onclick="mostrarEtapa(2)">Calcular</button>
+                 </a>
+    
+                            
+            </div>
+           
+           
+
+            <!--Display das notas-->
+            <div id="displayNotas">
+                <p class="numEtapa">3</p>
+            <h3>Aqui estão as notas <br>Fique à vontade para modificar a média desejada :)</h3>          
+
+                <div id="containerNotas"> <!--Flexbox, pra que te quero-->
+                    <table id="table">
+                        <thead>
+                            <th>Matéria</th>
+                            <th>Média desejada</th>
+                            <th>Nota necessária na P3</th>
+                        </thead>
+                        <tbody id="tbody"></tbody>                        
+                        
+                    </table>
+                    
+                    
+                </div>
+
+            </div>
+            
+            <!--Fim display das notas-->
+
+        
+
+        <!--Início método manual de inserção-->
+        <div id="fluxoManual">
+            <p class="numEtapa">2</p>
+            <form action="">
+                <h3>Insira as notas e os pesos das provas</h3>
+                    <label for="pesoP1">Peso da P1:</label>
+                    <input type="text" id="pesoP1" name="pesoP1">
+                    <label for="notaP1">Nota na P1:</label>
+                    <input type="text" id="notaP1" name="notaP1">
+                    <br>
+                    <label for="pesoP2">Peso da P2:</label>
+                    <input type="text" id="pesoP2" name="pesoP2">
+                    <label for="notaP2">Nota na P2:</label>
+                    <input type="text" id="notaP2" name="notaP2">
+                    <br>
+                    <label for="pesoP3">Peso da P3:</label>
+                    <input type="text" id="pesoP3" name="pesoP3">
+                    <br>
+                    <label class="mediaManual" for="mediaManual">Média desejada:</label>
+                    <input  type="text" id="mediaManual" name="mediaManual">
+                    <br>
+            </form>
+                <a href="#displayNotasManual">
+                    <button id="calcularManual" onclick="mostrarEtapa(4)">Calcular</button>
+                </a>
+        </div>
+        <div id="displayNotasManual">
+            <p class="numEtapa">2</p>
+            <h3>Nota necessária na P3: <span style="color: black;" id="notaP3Manual"></span></h3>
+            <p>Fique à vontade para modidicar os valores e recalcular :)</p>
+           
+        </div>
+        <!--
+        <div id="buttons">
+            <button">Cálculo II</button>
+            <p id="CalculoII"></p>
+            <button>Física II</button>
+            <p></p>
+            <button>Mecânica A</button>
+            <p></p>
+            <button>Algelin II</button>
+            <p></p>
+            <button>Poesia para engenheiros</button>
+            <p></p>
+            <a href="manualInput.html"><button>Calcular manualmente</button></a>
+        </div>
+    -->
+
+      <script src="formFlow.js"></script>
+      <script src="mediaManual.js"></script>
+      <script src="mediaAutomatica.js"></script>
+
+    </body>
+    </div>
+</html>

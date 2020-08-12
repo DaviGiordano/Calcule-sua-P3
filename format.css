@@ -1,0 +1,207 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0px;
+    background-color: #ecf0f1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header{
+    font-family: Helvetica, Arial, sans-serif;
+    align-self: center;
+    text-align: center;
+    color: #004ba0;
+}
+
+h1{
+    font: 2em Helvetica, Arial, sans-serif;
+    font-weight: bold;    
+}
+h2{
+    font: 1.5em Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    margin: 0px 20px;
+}
+
+h3{
+    font: 22px Helvetica, Arial, sans-serif;
+    color: #004ba0;
+    font-weight: bold;
+}
+p{
+    font: 20px Helvetica, Arial, sans-serif;
+    color: #004ba0;
+    font-weight: bold;
+}
+
+
+input{
+    font: 20px Helvetica, Arial, sans-serif;
+
+}
+form{
+    font: 20px Helvetica, Arial, sans-serif;
+
+}
+a{
+    text-decoration: none;
+    display: flex;
+    align-self: center;
+}
+button{
+    border: 1px solid #004ba0;
+    border-radius: 20px;
+    margin: 10px;
+    background: none;
+    padding: 10px 20px;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #004ba0;
+    align-self: center;
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+    background-color: #ecf0f1;
+}
+button:hover{
+    transition: 0.3s;
+    color: #ecf0f1;
+    background-color: #63a4ff;
+    cursor: pointer;
+    box-shadow: 0px 3px none;
+}
+/*!!EDITAR O CLIQUE DO BOTÃO*/
+label{
+    color: #004ba0;
+    font-weight: bold;
+    margin: 20px;
+    margin-right: 0px;
+}
+
+input{
+    border-color: #004ba0;
+    border-radius: 10px;
+    background-color: #ecf0f1;
+    color: black;
+    font-weight: bold;
+    margin: 20px;
+    margin-left: 0px;
+    width: 40px;
+    text-align: center;
+    
+}
+table{
+    width: 100%;
+    border-collapse: separate;
+    border: 3px solid #004ba0;
+    border-radius: 20px;
+}
+td,th{        
+    padding: 0.5rem;
+    text-align: left;
+}
+table th{
+    font: 20px Helvetica, Arial, sans-serif;
+    color: #004ba0;
+    font-weight: bold;
+    text-align: center;
+
+}
+table td{
+    font: 20px Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+
+}
+#mainbtns{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.numEtapa{
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid #004ba0;
+    color: #004ba0;
+    background-color: #e7a61a;
+    text-align: center;
+    font: 20px Helvetica, Arial, sans-serif;
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
+#escolhaMetodo, #escolhaSemestre, #escolhaMaterias, #displayNotas, #fluxoManual, #displayNotasManual{
+    flex-direction: column;
+    border: 3px solid #004ba0;
+    background-color:#e7a61a;
+    border-radius: 20px;
+    margin: 10px 30px;
+    padding: 10px;
+    box-shadow: 0px 7px 15px 2px rgba(0,0,0,0.75);
+}
+#displayNotas{
+    margin-bottom: 100px;
+}
+
+/*Diminuir o tamanho dos cards para telas maiores do que 900px:*/
+@media only screen and (min-width:900px){
+    #escolhaMetodo, #escolhaSemestre, #escolhaMaterias, #displayNotas, #fluxoManual, #displayNotasManual{
+        min-width: 800px;
+    }
+    
+}
+/*fixar o tamanho dos cards para telas menores do que 900px:*/
+@media only screen and (max-width:900px){
+    #escolhaMetodo, #escolhaSemestre, #escolhaMaterias, #displayNotas, #fluxoManual, #displayNotasManual{
+        min-width: 80%;
+        max-width: 80%;
+    }
+    
+}
+/*Estilização do checkbox*/
+#materias2semestre{
+    box-sizing: border-box;
+}
+
+.materiaContainer{
+    display: flex;
+    align-items: center;
+}
+
+.materiaContainer label{
+    cursor: pointer;
+    display: flex;
+    font: bold 20px Helvetica, Arial, sans-serif;
+    color: #004ba0;
+}
+
+.materiaContainer input[type='checkbox']{
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+}
+
+ .materiaContainer label::before{
+    content: '';
+    width: 1em;
+    height: 1em;
+    border: 0.1em solid black;
+    border-radius: 0.3em;
+    margin-right: 0.5em;
+}
+
+.materiaContainer label:hover::before,
+.materiaContainer input[type='checkbox']:hover + label::before {
+     background-color: lightblue;
+}
+.materiaContainer input[type='checkbox']:focus + label::before {
+    box-shadow: 0 0 5px black;
+}
+ .materiaContainer input[type='checkbox']:checked +label::before{
+     background-color: #004ba0;
+}
