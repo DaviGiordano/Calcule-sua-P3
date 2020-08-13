@@ -123,25 +123,43 @@
         <!--Início método manual de inserção-->
         <div id="fluxoManual">
             <p class="numEtapa">2</p>
-            <form action="">
-                <h3>Insira as notas e os pesos das provas</h3>
+            <h3>Insira as notas e os pesos das provas</h3>
+
+            <div id="containerInputManual">
+                <div class="inputManual">
                     <label for="pesoP1">Peso da P1:</label>
                     <input type="number" id="pesoP1" name="pesoP1">
+                </div>
+                <div class="inputManual">
                     <label for="notaP1">Nota na P1:</label>
                     <input type="number" id="notaP1" name="notaP1">
-                    <br>
+                </div> 
+                <br>
+
+                <div class="inputManual">
                     <label for="pesoP2">Peso da P2:</label>
                     <input type="number" id="pesoP2" name="pesoP2">
+                </div>
+
+                <div class="inputManual">
                     <label for="notaP2">Nota na P2:</label>
-                    <input type="number" id="notaP2" name="notaP2">
-                    <br>
+                    <input type="number" id="notaP2" name="notaP2">    
+                </div>
+                <br>
+
+                <div class="inputManual">
                     <label for="pesoP3">Peso da P3:</label>
                     <input type="number" id="pesoP3" name="pesoP3">
-                    <br>
+                </div>
+                    
+                <br>
+                <div class="inputManual">
                     <label class="mediaManual" for="mediaManual">Média desejada:</label>
                     <input  type="number" id="mediaManual" name="mediaManual">
-                    <br>
-            </form>
+                </div>
+
+                <br>
+            </div>
                 <a href="#displayNotasManual">
                     <button id="calcularManual" onclick="mostrarEtapa(4)">Calcular</button>
                 </a>

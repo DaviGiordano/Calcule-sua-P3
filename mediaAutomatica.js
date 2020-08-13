@@ -59,6 +59,7 @@ automaBtn.addEventListener('click', function(){
                 newrow.cells[1].appendChild(tituloMedia);
                 
                 var media = document.createElement('input');
+                media.type = 'number';
                 media.value = data[materia.position]['media_pretendida'];
                 media.id = 'media'+ materia.nome;
                 newrow.cells[1].appendChild(media);
