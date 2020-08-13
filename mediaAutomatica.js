@@ -50,7 +50,7 @@ automaBtn.addEventListener('click', function(){
                 
                 //dados a serem inseridos em cada célula
                 var nomeMateria = document.createElement('h3');
-                nomeMateria.style.color = '#004ba0';
+                nomeMateria.style.color = 'black';
                 nomeMateria.innerHTML = materia.nome;
                 newrow.cells[0].appendChild(nomeMateria);
 
