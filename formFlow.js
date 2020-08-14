@@ -19,8 +19,6 @@ function mostrarEtapa(numEtapa){
     if(numEtapa != 4 && numEtapa != 5){
         document.getElementById('fluxoManual').style.display = 'none';
         document.getElementById('displayNotasManual').style.display = 'none';
-        
-
     }
 };
 

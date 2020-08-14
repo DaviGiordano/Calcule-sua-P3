@@ -86,6 +86,7 @@ automaBtn.addEventListener('click', function(){
                     resultado.innerHTML = '...';
                     setTimeout(recalcular, 1500);
                     function recalcular(){
+                        console.log(media.value);
                         var novaNota = (((media.value)*(data[materia.position]['peso_p1'] + data[materia.position]['peso_p2'] + data[materia.position]['peso_p3']) 
                         - (data[materia.position]['nota_p1']*data[materia.position]['peso_p1']) 
                         - (data[materia.position]['nota_p2']*data[materia.position]['peso_p2']))/data[materia.position]['peso_p3']).toFixed(1);
