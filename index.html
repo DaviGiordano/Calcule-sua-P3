@@ -9,7 +9,7 @@
         <meta name="keywords" content="média, poli, escola, politécnica, nota, P3,"/>
         <link rel="stylesheet" type="text/css" href="format.css">
     </head>
-    
+
     <body onload="esconderEtapas()">
         
         <header>
@@ -68,7 +68,7 @@
 
             </div>
             <a href="#displayNotas">
-                <button id="calcularAutomatico" onclick="mostrarEtapa(2)">Calcular</button>
+                <button id="calcularAutomatico" onclick="mostrarEtapa(2),mostrarEtapa(5)">Calcular</button>
             </a>                 
         </div>
            
@@ -134,7 +134,7 @@
                 <br>
             </div>
                 <a href="#displayNotasManual">
-                    <button id="calcularManual" onclick="mostrarEtapa(4)">Calcular</button>
+                    <button id="calcularManual" onclick="mostrarEtapa(4),mostrarEtapa(5)">Calcular</button>
                 </a>
         </div>
 
@@ -144,6 +144,9 @@
             <p>Fique à vontade para modificar os valores e recalcular :)</p>   
         </div>
         
+        <div id="footer">
+            <small style="text-align-last: center;" >Tem uma sugestão? Mande um email pra 'davigiordano2704@gmail.com' com sua ideia! <br> All content in this site &copy; 2020 PoliJúnior | All rights reserved. </small>   
+        </div>
 
       <script src="formFlow.js"></script>
       <script src="mediaManual.js"></script>

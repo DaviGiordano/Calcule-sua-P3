@@ -1,8 +1,8 @@
-const etapas = ['escolhaMetodo','escolhaMaterias','displayNotas','fluxoManual','displayNotasManual'];
+const etapas = ['escolhaMetodo','escolhaMaterias','displayNotas','fluxoManual','displayNotasManual','footer'];
 
 function esconderEtapas(){
     var i;
-    for(i=0;i<5;i++){
+    for(i=0;i<6;i++){
         document.getElementById(etapas[i]).style.display = 'none';
         console.log('escondendo etapa:'+ etapas[i]);
     }
@@ -13,9 +13,13 @@ function mostrarEtapa(numEtapa){
     console.log('mostrando etapa ' + etapas[numEtapa]);
 
     //esconder processo manual se a etapa for do processo automático
-    if(numEtapa != 4){
+    if(numEtapa!=5){
+        document.getElementById('footer').style.display = 'none';
+    }
+    if(numEtapa != 4 && numEtapa != 5){
         document.getElementById('fluxoManual').style.display = 'none';
         document.getElementById('displayNotasManual').style.display = 'none';
+        
 
     }
 };
