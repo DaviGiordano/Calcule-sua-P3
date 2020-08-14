@@ -28,3 +28,12 @@ function startManual(){
     }
     document.getElementById('fluxoManual').style.display = 'flex';
 }
+
+/*Esconder o botão vamos lá após ser clicado */
+function hideMe(){
+    var startBtn = document.getElementById('start-btn');
+    startBtn.style.opacity = '.3';
+    startBtn.style.color = 'black';
+    startBtn.style.backgroundColor = '#ecf0f1';
+    startBtn.style.cursor = 'default';
+};

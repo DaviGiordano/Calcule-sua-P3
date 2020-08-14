@@ -26,6 +26,7 @@ h2{
     font: 1.5em Helvetica, Arial, sans-serif;
     font-weight: bold;
     margin: 0px 20px;
+    width: 800px;
 }
 
 h3{
@@ -120,10 +121,6 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
-
-input[type=number] {
-  -moz-appearance: textfield;
 }
 
 /*Início estilização tabela de resultados*/
@@ -226,6 +223,9 @@ table span{
     #escolhaMetodo, #escolhaSemestre, #escolhaMaterias, #displayNotas, #fluxoManual, #displayNotasManual{
         width: 80%;
     }
+    h2{
+        width: auto;
+    }
 }
 
 /*Estilização do checkbox*/
@@ -252,7 +252,7 @@ table span{
 
 }
 
- .materiaContainer label::before{
+.materiaContainer label::before{
     content: '';
     width: 1em;
     height: 1em;
@@ -260,12 +260,12 @@ table span{
     border-radius: 0.3em;
     margin-right: 0.5em;
     flex-shrink: 0;
-
+    background-color: #ecf0f1;
 }
 
 .materiaContainer label:hover::before,
 .materiaContainer input[type='checkbox']:hover + label::before {
-     background-color: lightblue;
+     background-color: #63a4ff;
 }
 
 .materiaContainer input[type='checkbox']:focus + label::before {
@@ -274,11 +274,19 @@ table span{
 
  .materiaContainer input[type='checkbox']:checked +label::before{
     content: '\002714'; 
-    background-color: black;
+    background-color: #ecf0f1;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #ecf0f1;
+    color: black;
+}
+.materiaContainer input[type='checkbox']:checked:hover +label::before{
+    content: '\002714'; 
+    background-color: #63a4ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ecf0f1;;
 }
 /*Fim da estilização do checkbox*/
 

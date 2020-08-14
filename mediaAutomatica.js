@@ -32,10 +32,6 @@ automaBtn.addEventListener('click', function(){
 
             if(materia.status){
                 //fórmula para o cálculo da nota da P3 necessária 
-                console.log(materia.nome);
-                console.log(data[materia.position]['media_pretendida']);   
-                console.log(data[materia.position]['peso_p1']);
-
 
                 var notaP3 = ((data[materia.position]['media_pretendida'])*(data[materia.position]['peso_p1'] + data[materia.position]['peso_p2'] + data[materia.position]['peso_p3']) 
                            - (data[materia.position]['nota_p1']*data[materia.position]['peso_p1']) 
@@ -70,7 +66,16 @@ automaBtn.addEventListener('click', function(){
 
                 var resultado = document.createElement('p');
                 resultado.style.color = 'black';
-                resultado.innerHTML = notaP3.toFixed(1);
+                if(notaP3>10){
+                    resultado.innerHTML = 'Maior do que 10' + '  ('+notaP3.toFixed(1)+')'; 
+                }
+                else if(notaP3<0){
+                    resultado.innerHTML = 'Menor do que 0' + '  ('+notaP3.toFixed(1)+')';
+                }
+                else{
+                    resultado.innerHTML = notaP3.toFixed(1);
+                }
+                
                 resultado.id = 'resultado'+ materia.nome;
                 newrow.cells[2].appendChild(resultado);
                 
@@ -81,11 +86,20 @@ automaBtn.addEventListener('click', function(){
                     resultado.innerHTML = '...';
                     setTimeout(recalcular, 1500);
                     function recalcular(){
-                        resultado.innerHTML = (((media.value)*(data[materia.position]['peso_p1'] + data[materia.position]['peso_p2'] + data[materia.position]['peso_p3']) 
+                        var novaNota = (((media.value)*(data[materia.position]['peso_p1'] + data[materia.position]['peso_p2'] + data[materia.position]['peso_p3']) 
                         - (data[materia.position]['nota_p1']*data[materia.position]['peso_p1']) 
                         - (data[materia.position]['nota_p2']*data[materia.position]['peso_p2']))/data[materia.position]['peso_p3']).toFixed(1);
+                        
+                        if(Number(novaNota)>10){
+                            resultado.innerHTML = 'Maior do que 10' + '  ('+ Number(novaNota).toFixed(1)+')';
+                        }
+                        else if(Number(novaNota)<0){
+                            resultado.innerHTML = 'Menor do que 0' + '  ('+ Number(novaNota).toFixed(1)+')';
+                        }
+                        else{
+                            resultado.innerHTML = Number(novaNota).toFixed(1);
+                        }
                     }
-                    //POR QUE ISSO FUNCIONA?????????????????????????????????
                    
                 };
             }      
@@ -94,11 +108,3 @@ automaBtn.addEventListener('click', function(){
     xhr.send();
 });
 
-/*
-Quick ref:
-        MAT2454 Cálculo 2
-        MAT3458 Algebra Linear 2
-        PME2100 Mecânica A 
-        FIS4302112 Física 2
-        PMI3019 Poesia para engenheiros
-*/
