@@ -13,11 +13,11 @@ automaBtn.addEventListener('click', function(){
 
     //verificar quais materias estão 'marcadas' para o cálculo, mais sua indexação e associação a nome.
     var checkform = [
-        {'nome':'Cálculo II', position:0, 'status':document.querySelector('#MAT2454').checked },
-        {'nome':'Física II', position:1, 'status':document.querySelector("#FIS4302112").checked},
-        {'nome':'Mecânica A', position:2, 'status':document.querySelector('#PME2100').checked },
-        {'nome':'Algelin II', position:3, 'status':document.querySelector('#MAT3458').checked },
-        {'nome':'Poesia para engenheiros', position:4, 'status':document.querySelector('#PMI3019').checked },
+        {'nome':'Cálculo II', 'cod':'(MAT2454)', position:0, 'status':document.querySelector('#MAT2454').checked },
+        {'nome':'Física II', 'cod':'(4302112)', position:1, 'status':document.querySelector("#FIS4302112").checked},
+        {'nome':'Mecânica A', 'cod':'(PME2100)', position:2, 'status':document.querySelector('#PME2100').checked },
+        {'nome':'Algelin II', 'cod':'(MAT3458)', position:3, 'status':document.querySelector('#MAT3458').checked },
+        {'nome':'Poesia para engenheiros', 'cod':'(PMI3019)', position:4, 'status':document.querySelector('#PMI3019').checked },
     ]; 
 
     //início do HTMLRequest
@@ -51,7 +51,7 @@ automaBtn.addEventListener('click', function(){
                 //dados a serem inseridos em cada célula
                 var nomeMateria = document.createElement('h3');
                 nomeMateria.style.color = 'black';
-                nomeMateria.innerHTML = materia.nome;
+                nomeMateria.innerHTML = materia.nome +' '+ materia.cod;
                 newrow.cells[0].appendChild(nomeMateria);
 
                 var tituloMedia = document.createElement('span');
